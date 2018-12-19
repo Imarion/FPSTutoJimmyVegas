@@ -12,11 +12,19 @@ public class ZombieFollow : MonoBehaviour {
 	public float EnemySpeed;
 	public bool AttackTrigger;
 
+	public bool IsAttacking = false;
+	public GameObject ScreenFlash;
+	public AudioSource Hurt01, Hurt02, Hurt03;
+	public int PainSound;
+
 	private RaycastHit Shot;
+	private WaitForSeconds wfsAtatckAnim, wfsFlash, wfs1sec;
 
 	// Use this for initialization
 	void Start () {
-		
+		wfsAtatckAnim = new WaitForSeconds (0.9f); // zombie attack animation length
+		wfsFlash = new WaitForSeconds(0.05f);
+		wfs1sec = new WaitForSeconds(1.0f);
 	}
 	
 	// Update is called once per frame
@@ -37,6 +45,9 @@ public class ZombieFollow : MonoBehaviour {
 		}
 
 		if (AttackTrigger) {
+			if (!IsAttacking) {
+				StartCoroutine ("EnemyDamage");
+			}
 			EnemySpeed = 0.0f;
 			TheEnemyAnim.Play ("Attacking");
 		}
@@ -50,4 +61,28 @@ public class ZombieFollow : MonoBehaviour {
 		AttackTrigger = false;
 	}
 
+	IEnumerator EnemyDamage() {
+		IsAttacking = true;
+
+		PainSound = Random.Range (1, 4);
+		yield return wfsAtatckAnim;
+		ScreenFlash.SetActive (true);
+		GlobalHealth.PlayerHealth -= 1;
+		switch (PainSound) {
+		case 1:
+				Hurt01.Play();
+				break;
+			case 2:
+				Hurt02.Play();
+				break;
+			case 3:
+				Hurt03.Play();
+				break;
+		}
+		yield return wfsFlash;
+		ScreenFlash.SetActive (false);
+		yield return wfs1sec;
+
+		IsAttacking = false;
+	}
 }
