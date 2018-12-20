@@ -891,7 +891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_Layer
@@ -1108,6 +1108,52 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &369275486
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050552402620036, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673829172152068, guid: 728285b5af67242458156854fb89b344, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 728285b5af67242458156854fb89b344, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &370101597
 GameObject:
   m_ObjectHideFlags: 0
@@ -7661,6 +7707,7 @@ Animation:
   - {fileID: 7400000, guid: 4c5bf2ac2113f524cbe8f99d8868161d, type: 2}
   - {fileID: 7400000, guid: fa73ab7f441aba940b1b8cd64de3a29d, type: 2}
   - {fileID: 7400000, guid: 8873011087c98a1438e669181e7cf3f9, type: 2}
+  - {fileID: 7400000, guid: ebf01e6be41867d4fa9c477957a2f9a6, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -7700,6 +7747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 10
+  zf: {fileID: 830818114}
+  ZombieDie: {fileID: 830818112}
 --- !u!1001 &833639342
 Prefab:
   m_ObjectHideFlags: 0
@@ -8137,6 +8186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 10
+  zf: {fileID: 0}
+  ZombieDie: {fileID: 0}
 --- !u!65 &1034331839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9319,6 +9370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 10
+  zf: {fileID: 0}
+  ZombieDie: {fileID: 0}
 --- !u!65 &1228804113
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10457,7 +10510,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577172079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.021, z: 1.753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1510962632}
@@ -10586,6 +10639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmount: 5
   AllowedRange: 15
+  TheBullet: {fileID: 1673829172152068, guid: 728285b5af67242458156854fb89b344, type: 2}
 --- !u!1 &1599211474
 GameObject:
   m_ObjectHideFlags: 0
@@ -11393,6 +11447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 10
+  zf: {fileID: 0}
+  ZombieDie: {fileID: 0}
 --- !u!65 &1814066879
 BoxCollider:
   m_ObjectHideFlags: 0
