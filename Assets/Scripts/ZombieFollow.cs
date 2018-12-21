@@ -67,7 +67,7 @@ public class ZombieFollow : MonoBehaviour {
 		PainSound = Random.Range (1, 4);
 		yield return wfsAtatckAnim;
 		ScreenFlash.SetActive (true);
-		GlobalHealth.PlayerHealth -= 1;
+		GlobalHealth.PlayerHealth -= 2;
 		switch (PainSound) {
 		case 1:
 				Hurt01.Play();
