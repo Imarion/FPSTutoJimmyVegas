@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CredToMenu : MonoBehaviour {
+public class SplashToMenu : MonoBehaviour {
 
-	private WaitForSeconds wfendcredits;
+	private WaitForSeconds wfsplashend;
 
 	// Use this for initialization
 	void Start () {
-		wfendcredits = new WaitForSeconds (12);
-		StartCoroutine ("WaitForEndCredit");
+		wfsplashend = new WaitForSeconds (3);
+		StartCoroutine ("WaitForSplashEnd");
 	}
 	
 	// Update is called once per frame
@@ -18,8 +18,8 @@ public class CredToMenu : MonoBehaviour {
 		
 	}
 
-	IEnumerator WaitForEndCredit() {
-		yield return wfendcredits;
+	IEnumerator WaitForSplashEnd() {
+		yield return wfsplashend;
 		SceneManager.LoadScene (4);
 	}
 }

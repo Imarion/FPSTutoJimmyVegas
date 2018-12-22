@@ -24,7 +24,7 @@ public class GlobalHealth : MonoBehaviour {
 		HealthDisplay.text = "Health: " + InternalHealth;
 
 		if (PlayerHealth == 0) {
-			SceneManager.LoadScene (1);
+			SceneManager.LoadScene (2);
 		}
 	}
 }
