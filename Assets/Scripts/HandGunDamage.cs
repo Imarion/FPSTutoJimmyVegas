@@ -8,6 +8,8 @@ public class HandGunDamage : MonoBehaviour {
 	public float AllowedRange = 15.0f;
 
 	public GameObject TheBullet;
+	public GameObject TheBlood;
+	public GameObject TheGreenBlood;
 
 	private float TargetDistance;
 	private RaycastHit hit;
@@ -27,12 +29,19 @@ public class HandGunDamage : MonoBehaviour {
 					TargetDistance = Shot.distance;
 					if (TargetDistance < AllowedRange) {
 						Shot.transform.SendMessage ("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
-						Instantiate(TheBullet, Shot.point, Quaternion.FromToRotation(Vector3.up, Shot.normal));
+						//Instantiate(TheBullet, Shot.point, Quaternion.FromToRotation(Vector3.up, Shot.normal));
 						/*
 						if (Physics.Raycast(transform.position, transform.forward, out hit)) {
 							Instantiate(TheBullet, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
 						}
 						*/
+						if (Shot.transform.tag == "Zombie") {
+							Instantiate (TheBlood, Shot.point, Quaternion.FromToRotation (Vector3.up, Shot.normal));
+						} else if (Shot.transform.tag == "Spider") {
+								Instantiate (TheGreenBlood, Shot.point, Quaternion.FromToRotation (Vector3.up, Shot.normal));
+						} else {
+							Instantiate(TheBullet, Shot.point, Quaternion.FromToRotation(Vector3.up, Shot.normal));
+						}
 					}
 				}
 			}
