@@ -36,7 +36,7 @@ public class SpiderFollow : MonoBehaviour {
 				EnemySpeed = 0.03f;
 				if (!AttackTrigger) {
 					TheEnemyAnim.Play ("walk");
-					transform.position = Vector3.MoveTowards (transform.position, ThePlayer.transform.position, EnemySpeed);
+					transform.position = Vector3.MoveTowards (transform.position, ThePlayer.transform.position, Time.deltaTime);
 				}
 			} else {
 				EnemySpeed = 0.0f;

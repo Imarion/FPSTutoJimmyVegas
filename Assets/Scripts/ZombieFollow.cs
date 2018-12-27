@@ -36,7 +36,7 @@ public class ZombieFollow : MonoBehaviour {
 				EnemySpeed = 0.02f;
 				if (!AttackTrigger) {
 					TheEnemyAnim.Play ("Walking");
-					transform.position = Vector3.MoveTowards (transform.position, ThePlayer.transform.position, EnemySpeed);
+					transform.position = Vector3.MoveTowards (transform.position, ThePlayer.transform.position, Time.deltaTime);
 				}
 			} else {
 				EnemySpeed = 0.0f;
