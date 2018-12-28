@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MainMenu.unity
     guid: 28ee3654f1b6a784384cae544e7ae5c9
+  - enabled: 1
+    path: Assets/_Scenes/Respawn.unity
+    guid: d0f06aa84030af2439d4f67c65bec92f
   m_configObjects: {}

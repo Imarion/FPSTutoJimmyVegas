@@ -9,7 +9,7 @@ public class CredToMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		wfendcredits = new WaitForSeconds (12);
+		wfendcredits = new WaitForSeconds (10);
 		StartCoroutine ("WaitForEndCredit");
 	}
 	

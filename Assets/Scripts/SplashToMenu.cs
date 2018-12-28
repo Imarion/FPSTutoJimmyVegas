@@ -9,7 +9,7 @@ public class SplashToMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		wfsplashend = new WaitForSeconds (3);
+		wfsplashend = new WaitForSeconds (5.5f);
 		StartCoroutine ("WaitForSplashEnd");
 	}
 	

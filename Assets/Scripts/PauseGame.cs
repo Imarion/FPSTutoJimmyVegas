@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour {
 
@@ -40,5 +41,10 @@ public class PauseGame : MonoBehaviour {
 		paused = false;
 		ThePlayer.enabled = true;
 		PauseMenu.SetActive(false);
+	}
+
+	public void RespawnGame() {
+		SceneManager.LoadScene (5);
+		ResumeGame ();
 	}
 }
