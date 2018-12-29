@@ -49,5 +49,6 @@ public class Pickup9mm : MonoBehaviour {
 		FakeGun.SetActive(false);
 		RealGun.SetActive (true);
 		AmmoDisplay.SetActive (true);
+		GunHandling.PickedUpGun = true;
 	}
 }
