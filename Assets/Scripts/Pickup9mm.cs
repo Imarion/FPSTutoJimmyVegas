@@ -14,6 +14,7 @@ public class Pickup9mm : MonoBehaviour {
 	public GameObject FakeGun;
 	public GameObject RealGun;
 	public GameObject ObjectiveComplete;
+	public GameObject CaveDoorTrig;
 
 	private float ToTarget;
 
@@ -44,6 +45,7 @@ public class Pickup9mm : MonoBehaviour {
 	}
 
 	void Take9mm() {
+		CaveDoorTrig.SetActive (false);
 		Pickup9mmAudio.Play ();
 		transform.position = new Vector3 (0.0f, -1000.0f, 0.0f);
 		FakeGun.SetActive(false);
